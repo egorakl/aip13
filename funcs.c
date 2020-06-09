@@ -6,13 +6,13 @@ char* checkline(char* s) {   //  Проверка строки на правильность
 
 	for (int i = 0; i < strlen(s); i++) {
 		if (isalpha(s[i]) == 0 && s[i]!='\n' && s[i] != ' ') {
-			printf("Error: invalid input.\n");
+			printf("Error: invalid input\n");
 			return NULL;
 		}
 		if (isalpha(s[i]) != 0) t++;
 	}
 	if (t == 0) {
-		printf("Error: no letters in file.\n");
+		printf("Error: invalid input\n");
 		return NULL;
 	}
 
@@ -114,7 +114,7 @@ node *create_tree(char *filename)   // Создание дерева
 	s = strtok(str, sep);  // Разбитие на лексемы
 
 	if (strlen(s) > 20) { // Проверка слова на длину
-			printf("Error: word length > 20\n");
+			printf("Error: invalid input\n");
 			free_tree(root);
 			exit(1);
 		}
@@ -124,7 +124,7 @@ node *create_tree(char *filename)   // Создание дерева
 	while (s != NULL)
 	{
 		if (strlen(s) > 20) { // Проверка слова на длину
-			printf("Error: word length >20\n");
+			printf("Error: invalid input\n");
 			free_tree(root);
 			exit(1);
 		}
